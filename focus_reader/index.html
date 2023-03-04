@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Reader</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
+    <style>
+        .container {
+            margin-top: 5em;
+        }
+
+        .text {
+            font-size: 26px;
+            text-align: justify;
+        }
+
+        span {
+            color: #16a085
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">Speed Reading</li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="callout large primary">
+        <div class="row column text-center">
+            <h1>Speed Reading</h1>
+            <h2 class="subheader">Try it out</h2>
+        </div>
+    </div>
+
+    <!-- We can now combine rows and columns when there's only one column in that row -->
+    <div class="container">
+
+        <div class="row medium-8 large-7 columns">
+            <h2>Letters to Lucilius </h2>
+            <h5>tick: 25ms/character</h5>
+            <div class="blog-post">
+                <p class="text">Ready to start?</p>
+            </div>
+
+            <button class="button success" onclick="addText()">start</button>
+        </div>
+    </div>
+
+    <script>
+
+
+        setInterval(advance, 25)
+  
+
+        var count = 0
+        var start = false
+        const p = document.getElementsByTagName("p")[0]
+        const text = "Continue to act thus, my dear Lucilius – set yourself free for your own sake; gather and save your time, which till lately has been forced from you, or filched away, or has merely slipped from your hands. Make yourself believe the truth of my words, – that certain moments are torn from us, that some are gently removed, and that others glide beyond our reach. The most disgraceful kind of loss, however, is that due to carelessness. Furthermore, if you will pay close heed to the problem, you will find that the largest portion of our life passes while we are doing ill, a goodly share while we are doing nothing, and the whole while we are doing that which is not to the purpose."
+        function addText() {
+
+            p.innerHTML = text;
+            count = 0
+            start = true
+        }
+
+        function advance() {
+            if (start) {
+
+                if (count <= text.length) {
+                    p.innerHTML = "<span>" + text.substring(0, count) + "</span>" + text.substring(count, text.length);
+                    count++
+                }
+                else if (count > text.length) {
+                    count = 0
+                    p.innerHTML = "<div>So? Did you keep up? <hr> <ul><li> Question1: Seneca said to Lucilius to set himself free for who's sake? </li><li>Question2: What is the most disgraceful loss according to Seneca? </li></ul></div>"
+                    start = false
+                }
+            }
+
+        }
+    </script>
+    <!-- #region -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>

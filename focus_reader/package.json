@@ -1,0 +1,28 @@
+{
+  "name": "focus_reading",
+  "version": "1.0.0",
+  "description": "Cursor to follow",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tafirest/tafirest.github.io.git"
+  },
+  "keywords": [
+    "code"
+  ],
+  "author": "tafirest",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tafirest/tafirest.github.io/issues"
+  },
+  "homepage": "https://github.com/tafirest/tafirest.github.io#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
